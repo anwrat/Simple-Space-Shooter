@@ -429,6 +429,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
+  livesUI:
+  - {fileID: 839924701}
+  - {fileID: 1059558687}
+  - {fileID: 223896609}
+  explosionprefab: {fileID: 4275596602879514708, guid: cd9bce65c894a9e43adbe08befb25466, type: 3}
 --- !u!1 &64620580
 GameObject:
   m_ObjectHideFlags: 0
