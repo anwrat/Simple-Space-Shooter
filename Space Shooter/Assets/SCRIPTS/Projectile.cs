@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float moveSpeed;
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            //Start explosion animation
+            Instantiate(explosion,transform.position,Quaternion.identity);
             Destroy(collision.gameObject);//Destroy the object projectile collides with
             Destroy(gameObject);//Destroy projectile after collision
         }
