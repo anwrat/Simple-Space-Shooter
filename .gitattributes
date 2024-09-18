@@ -1,2 +1,6 @@
-# Mark TextMeshPro files as vendored to ignore them in language stats
-Space Shooter/Assets/TextMeshPro/* linguist-vendored
+# Force GitHub to recognize C# as the main language
+*.cs linguist-language=C#
+
+# De-prioritize ShaderLab files by marking them as generated
+*.shader linguist-vendored
+*.cginc linguist-vendored
