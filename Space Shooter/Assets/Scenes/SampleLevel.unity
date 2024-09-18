@@ -2315,6 +2315,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 64620581}
     m_Modifications:
+    - target: {fileID: 71400081286366658, guid: ee109636b19e6cc42a75c07c869f54fc, type: 3}
+      propertyPath: maxspawntimer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 71400081286366658, guid: ee109636b19e6cc42a75c07c869f54fc, type: 3}
+      propertyPath: minspawntimer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 694521650633937588, guid: ee109636b19e6cc42a75c07c869f54fc, type: 3}
       propertyPath: m_Name
       value: Enemy_1_A_Medium

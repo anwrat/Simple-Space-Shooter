@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6955926210095832225}
   - component: {fileID: 6304421152662647638}
   - component: {fileID: 8435694731411694590}
+  - component: {fileID: -5533594114531227632}
   m_Layer: 0
   m_Name: Enemy_1_D_Medium
   m_TagString: Enemy
@@ -130,3 +131,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.1357367}
   m_EdgeRadius: 0
+--- !u!114 &-5533594114531227632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882132265772481065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9030bcf904811458e83f6a6b993c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyprojectile: {fileID: 8268160019879468550, guid: 525519983103f9c4faaa22f293dcd624, type: 3}
+  spawntimer: 0
+  maxspawntimer: 5
+  minspawntimer: 1
