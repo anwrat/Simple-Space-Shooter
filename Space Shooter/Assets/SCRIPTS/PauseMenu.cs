@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     private bool isPaused;
     public GameObject pausepanel;
+    public AudioSource bgm;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,11 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
+                bgm.Play();
                 ContinueGame();
             }
             else { 
+                bgm.Pause();
                 PauseGame();
             }
         }

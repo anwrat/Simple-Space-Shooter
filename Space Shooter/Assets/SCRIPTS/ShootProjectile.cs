@@ -15,6 +15,8 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if the game is paused before firing
+        if (Time.timeScale == 0) return;
         //Under Unity Edit, inside project setting we can change default buttons through input manager
         if (readytoshoot && Input.GetButtonDown("Fire1")) { //If projectile is not under cooldown time(Coroutine)
             //Spawn the projectile at the position of the object script is attached to
