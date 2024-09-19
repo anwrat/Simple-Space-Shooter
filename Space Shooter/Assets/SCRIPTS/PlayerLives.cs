@@ -8,6 +8,8 @@ public class PlayerLives : MonoBehaviour
     public int lives = 3;
     public Image[] livesUI;
     public GameObject explosionprefab;
+    public GameObject gameoverpanel;
+    public PointManager pointmanager;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,8 @@ public class PlayerLives : MonoBehaviour
             if(lives <= 0)
             {
                 Destroy(gameObject);
+                pointmanager.HighScoreUpdate();
+                gameoverpanel.SetActive(true);
             }
         }
     }
@@ -67,6 +71,8 @@ public class PlayerLives : MonoBehaviour
             if (lives <= 0)
             {
                 Destroy(gameObject);
+                pointmanager.HighScoreUpdate();
+                gameoverpanel.SetActive(true);
             }
         }
     }
