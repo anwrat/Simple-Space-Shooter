@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerLives : MonoBehaviour
 {
@@ -19,7 +20,10 @@ public class PlayerLives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameoverpanel.activeSelf && Input.GetButtonDown("Accept")) 
+        {
+            ReplayLevel(); // Restart the level when Space is pressed
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,24 +33,7 @@ public class PlayerLives : MonoBehaviour
         {
             Destroy(collision.collider.gameObject);
             Instantiate(explosionprefab,transform.position,Quaternion.identity);
-            lives -= 1;
-            for (int i = 0; i < livesUI.Length; i++)
-            {
-                if (i < lives)
-                {
-                    livesUI[i].enabled = true;
-                }
-                else
-                {
-                    livesUI[i].enabled=false;
-                }
-            }
-            if(lives <= 0)
-            {
-                Destroy(gameObject);
-                pointmanager.HighScoreUpdate();
-                gameoverpanel.SetActive(true);
-            }
+            UpdateLives();
         }
     }
 
@@ -56,24 +43,31 @@ public class PlayerLives : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Instantiate(explosionprefab, transform.position, Quaternion.identity);
-            lives -= 1;
-            for (int i = 0; i < livesUI.Length; i++)
-            {
-                if (i < lives)
-                {
-                    livesUI[i].enabled = true;
-                }
-                else
-                {
-                    livesUI[i].enabled = false;
-                }
-            }
-            if (lives <= 0)
-            {
-                Destroy(gameObject);
-                pointmanager.HighScoreUpdate();
-                gameoverpanel.SetActive(true);
-            }
+            UpdateLives();
         }
+    }
+
+    private void UpdateLives()
+    {
+        lives -= 1;
+        for (int i = 0; i < livesUI.Length; i++)
+        {
+            livesUI[i].enabled = (i < lives);
+        }
+
+        if (lives <= 0)
+        {
+            Destroy(gameObject);
+            pointmanager.HighScoreUpdate();
+            gameoverpanel.SetActive(true); // Show game over panel
+            Time.timeScale = 0;//Pauses the game's time
+        }
+    }
+
+    public void ReplayLevel()
+    {
+        Time.timeScale = 1;
+        gameoverpanel.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reload the current scene
     }
 }
