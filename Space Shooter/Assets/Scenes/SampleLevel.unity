@@ -1380,6 +1380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameoverpanel: {fileID: 486729512}
   playership: {fileID: 53175716}
+  blinktext: {fileID: 2134502857}
 --- !u!1 &523461308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +3036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space to Play Again
+  m_text: Press Enter to Play Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42e463b33f18eb0428b3e3bcdac6a60b, type: 2}
   m_sharedMaterial: {fileID: 3280338015595265503, guid: 42e463b33f18eb0428b3e3bcdac6a60b, type: 2}
