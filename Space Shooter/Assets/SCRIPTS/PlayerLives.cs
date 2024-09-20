@@ -11,28 +11,24 @@ public class PlayerLives : MonoBehaviour
     public GameObject explosionprefab;
     public GameObject gameoverpanel;
     public PointManager pointmanager;
-    // Start is called before the first frame update
+    public GameOver gameover;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (gameoverpanel.activeSelf && Input.GetButtonDown("Accept")) 
-        {
-            ReplayLevel(); // Restart the level when Space is pressed
-        }
+
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //collision.collider because if we use only collision.gameObject it returns the entire parent object holding all ships
-        //collision.collider looks at the collider rather than parent object
         if (collision.collider.gameObject.tag == "Enemy")
         {
             Destroy(collision.collider.gameObject);
-            Instantiate(explosionprefab,transform.position,Quaternion.identity);
+            Instantiate(explosionprefab, transform.position, Quaternion.identity);
             UpdateLives();
         }
     }
@@ -57,17 +53,9 @@ public class PlayerLives : MonoBehaviour
 
         if (lives <= 0)
         {
-            Destroy(gameObject);
             pointmanager.HighScoreUpdate();
-            gameoverpanel.SetActive(true); // Show game over panel
-            Time.timeScale = 0;//Pauses the game's time
+            gameoverpanel.SetActive(true);
+            gameover.Gameisover();
         }
-    }
-
-    public void ReplayLevel()
-    {
-        Time.timeScale = 1;
-        gameoverpanel.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reload the current scene
     }
 }
