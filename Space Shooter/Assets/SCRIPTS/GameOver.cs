@@ -12,6 +12,8 @@ public class GameOver : MonoBehaviour
     public TMP_Text blinktext;
     private float blinktime = 0.5f;
     private bool isBlinking = false;
+    public string menuscenename;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,11 @@ public class GameOver : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ExittoMenu()//Function to load scene
+    {
+        SceneManager.LoadScene(menuscenename);
     }
 
     // Coroutine to blink the text

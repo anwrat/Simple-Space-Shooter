@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     private bool isPaused;
     public GameObject pausepanel;
     public AudioSource bgm;
+    public string menuscenename;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +43,11 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1; //Resume the game
         pausepanel.SetActive(false);
         isPaused = false;
+    }
+
+    public void ExittoMenu()//Function to load scene
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(menuscenename);
     }
 }
