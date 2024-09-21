@@ -23,7 +23,6 @@ public class GameOver : MonoBehaviour
     {
         if (gameoverpanel.activeSelf)
         {
-            Debug.Log("Game over panel is active");
             if (!isBlinking)
             {
                 StartCoroutine(BlinkText());
@@ -31,7 +30,6 @@ public class GameOver : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                Debug.Log("Enter key pressed");
                 Time.timeScale = 1;
                 ReplayLevel();
             }
@@ -46,7 +44,6 @@ public class GameOver : MonoBehaviour
 
     public void ReplayLevel()
     {
-        Debug.Log("Reloading the scene");
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
