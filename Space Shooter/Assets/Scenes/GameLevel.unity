@@ -436,6 +436,7 @@ MonoBehaviour:
   explosionprefab: {fileID: 4275596602879514708, guid: cd9bce65c894a9e43adbe08befb25466, type: 3}
   gameoverpanel: {fileID: 486729512}
   pointmanager: {fileID: 830115954}
+  gameover: {fileID: 519420033}
 --- !u!1 &64620580
 GameObject:
   m_ObjectHideFlags: 0

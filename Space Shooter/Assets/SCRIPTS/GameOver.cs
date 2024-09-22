@@ -52,6 +52,7 @@ public class GameOver : MonoBehaviour
 
     public void ExittoMenu()//Function to load scene
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(menuscenename);
     }
 

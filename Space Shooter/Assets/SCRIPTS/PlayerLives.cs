@@ -11,7 +11,7 @@ public class PlayerLives : MonoBehaviour
     public GameObject explosionprefab;
     public GameObject gameoverpanel;
     public PointManager pointmanager;
-    private GameOver gameover; //making the script reference private 
+    public GameOver gameover; 
 
     void Start()
     {
